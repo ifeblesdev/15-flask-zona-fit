@@ -1,0 +1,84 @@
+Zona Fit (GYM) 🏋️‍♀️
+Aplicación web de gestión de clientes para un gimnasio, desarrollada con Python, Flask, Bootstrap 5 y MySQL. Permite registrar, editar, listar y eliminar clientes y sus membresías.
+
+📌 Funcionalidades
+Registrar nuevos clientes con nombre, apellido y membresía.
+
+Editar información de clientes existentes.
+
+Eliminar clientes.
+
+Listar todos los clientes en una tabla.
+
+Formulario con validación de datos y protección CSRF.
+
+Interfaz responsiva y moderna gracias a Bootstrap.
+
+🧰 Tecnologías utilizadas
+Backend: Python, Flask, Flask-WTF
+
+Frontend: HTML5, Bootstrap 5, Jinja2
+
+Base de Datos: MySQL (conexión gestionada desde un módulo externo)
+
+ORM básico: acceso a base de datos con SQL crudo y mapeo manual a objetos Cliente
+
+📁 Estructura del proyecto
+csharp
+Copiar código
+zona-fit/
+│
+├── app.py               # Archivo principal de la aplicación Flask
+├── cliente.py           # Modelo de datos Cliente
+├── cliente_dao.py       # Operaciones CRUD sobre la base de datos
+├── cliente_forma.py     # Formulario con Flask-WTF
+├── conexion.py          # Manejo de conexión con la base de datos MySQL
+├── templates/
+│   └── index.html       # Plantilla principal (formulario + tabla)
+├── static/              # Archivos estáticos (no usados directamente aquí, pero útil para CSS/JS si amplías)
+└── README.md            # Este archivo
+
+🧪 Cómo ejecutar el proyecto
+1. Clona el repositorio
+bash
+Copiar código
+git clone https://github.com/ifeblesdev/15-flask-zona-fit.git
+cd zona-fit
+2. Crea y activa un entorno virtual
+bash
+Copiar código
+python -m venv venv
+source venv/bin/activate  # Linux/macOS
+venv\Scripts\activate     # Windows
+3. Instala las dependencias
+bash
+Copiar código
+pip install -r requirements.txt
+Ejemplo de requirements.txt:
+
+nginx
+Copiar código
+Flask
+Flask-WTF
+mysql-connector-python
+4. Configura la base de datos
+Crea una base de datos MySQL llamada zona_fit y una tabla cliente:
+
+sql
+Copiar código
+CREATE DATABASE zona_fit;
+USE zona_fit;
+
+CREATE TABLE cliente (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    apellido VARCHAR(100) NOT NULL,
+    membresia INT NOT NULL
+);
+Asegúrate de que tu archivo conexion.py contenga los datos correctos de conexión a tu servidor MySQL.
+
+5. Ejecuta la aplicación
+bash
+Copiar código
+python app.py
+Accede a http://localhost:5000 en tu navegador.
