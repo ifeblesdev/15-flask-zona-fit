@@ -1,4 +1,5 @@
-Zona Fit (GYM) 🏋️‍♀️
+# Zona Fit (GYM) 🏋️‍♀️
+
 Aplicación web de gestión de clientes para un gimnasio, desarrollada con Python, Flask, Bootstrap 5 y MySQL. Permite registrar, editar, listar y eliminar clientes y sus membresías.
 
 📌 Funcionalidades
